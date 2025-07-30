@@ -25,7 +25,7 @@ st.write(f"あなたが選択した映画は{selected_movie}(id={selected_movie_
 # 似ている映画を表示
 st.markdown(f"### {selected_movie}に似ている映画")
 results = []
-for movie_id, score in model.wv.most_similar(selected_movie_id):
+for movie_id, score in model.wv.most_similar(selected_movie_id,topn = 30):
     title = movie_id_to_title[movie_id]
     results.append({"movie_id":movie_id, "title": title, "score": score})
 results = pd.DataFrame(results)
