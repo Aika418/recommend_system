@@ -47,3 +47,5 @@ if selected_mangas:
             if manga_title not in selected_mangas:  # 選んだものは除外
                 recommend_results.append({"title": manga_title, "score": score})
         st.dataframe(pd.DataFrame(recommend_results))
+
+
